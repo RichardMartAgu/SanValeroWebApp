@@ -1,0 +1,9 @@
+<web-app>
+    <display-name>SanValeroWebApp</display-name>
+    <context-param>
+        <description>Ruta donde guardar las imagenes</description>
+        <param-name>image-path</param-name>
+        <param-value>/apache-tomcat-10.1.7\webapps\SanValeroWebApp2</param-value>
+    </context-param>
+
+</web-app>
