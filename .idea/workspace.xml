@@ -4,14 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+
     <list default="true" id="da94cc3d-5218-4e96-893d-36cafe7bc1f2" name="Changes" comment="add index">
       <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/20230428_114353.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/CARTEL GENERAL FERIA DE LA SEGUNDA OPORTUNIDAD_0.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/FORO.jpg" afterDir="false" />
+
+
+    <list default="true" id="da94cc3d-5218-4e96-893d-36cafe7bc1f2" name="Changes" comment="list registers CHANGE">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/logo_web_70_aniversario_san_valero.jpg" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/bachillerato.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/bachillerato.jpg" afterDir="false" />
     </list>
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,10 +31,15 @@
       </list>
     </option>
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/develop" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="features/registers" />
+
+        <entry key="$PROJECT_DIR$" value="develop" />
+
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,6 +55,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
@@ -50,8 +63,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "C:/Users/sanph/OneDrive/Escritorio/presencial/SanValeroWebApp/src/main/webapp"
+
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sanph\OneDrive\Escritorio\presencial\SanValeroWebApp\src\main\webapp" />

@@ -22,5 +22,6 @@ public class SubjectMapper implements RowMapper<Subject> {
                 rs.getString("image")
 
         );
+
     }
 }
