@@ -1,6 +1,6 @@
-package com.sanValero.DAO;
+package com.sanValero.dao;
 
-import com.sanValero.Domain.Subject;
+import com.sanValero.domain.Subject;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

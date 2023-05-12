@@ -1,11 +1,11 @@
 package com.sanValero.servlet;
 
-import com.sanValero.DAO.Database;
-import com.sanValero.DAO.Register_DAO;
-import com.sanValero.DAO.StudentDAO;
-import com.sanValero.DAO.SubjectDAO;
-import com.sanValero.Domain.Student;
-import com.sanValero.Domain.Subject;
+import com.sanValero.dao.Database;
+import com.sanValero.dao.RegisterDAO;
+import com.sanValero.dao.StudentDAO;
+import com.sanValero.dao.SubjectDAO;
+import com.sanValero.domain.Student;
+import com.sanValero.domain.Subject;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
@@ -60,7 +60,7 @@ public class AddRegisterServlet extends HttpServlet {
                 out.println("</script>");
 
             } else {
-                Database.jdbi.withExtension(Register_DAO.class, dao -> {
+                Database.jdbi.withExtension(RegisterDAO.class, dao -> {
                     dao.addRegister(id_student, id_subject, localDate);
                     return null;
                 });

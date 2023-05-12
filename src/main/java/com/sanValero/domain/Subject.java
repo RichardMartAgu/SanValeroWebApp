@@ -1,4 +1,4 @@
-package com.sanValero.Domain;
+package com.sanValero.domain;
 
 import lombok.*;
 
@@ -11,7 +11,7 @@ import lombok.*;
 @Setter
 public class Subject {
 
-    private int id_subject;
+    private int idSubject;
     @NonNull
     private String subjectName;
     @NonNull
