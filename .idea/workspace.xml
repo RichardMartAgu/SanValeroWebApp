@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+
     <list default="true" id="da94cc3d-5218-4e96-893d-36cafe7bc1f2" name="Changes" comment="Initial commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Svalero/util/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/util/DateUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Svalero/util/DateUtils.java" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/src/main/webApp/Includes/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Includes/footer.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webApp/Includes/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Includes/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webApp/META-INF/context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" afterDir="false" />
@@ -39,14 +41,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "C:/Users/Jesus/Desktop/SanValeroWebApps/src/main/webapp"
+
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/richa/IdeaProjects/SanValeroWebApp/src/main/webApp/util&quot;
+
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Jesus\Desktop\SanValeroWebApps\src\main\webapp" />
@@ -61,6 +72,7 @@
       <recent name="C:\Users\richa\IdeaProjects\SanValeroWebApp2\src\main\webApp\WEB-INF" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.sanValero.dao.dao" />
       <recent name="util" />
     </key>
   </component>
@@ -93,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683818548144</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Database connection">
+      <created>1683879943486</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1683879943487</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -109,6 +128,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Database connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Database connection" />
   </component>
 </project>
