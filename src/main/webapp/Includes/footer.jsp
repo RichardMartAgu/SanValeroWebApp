@@ -27,7 +27,8 @@ pageEncoding="UTF-8"%>
     </div>
     <div class="container text-sm-end">
     <br>
+
      <small class="d-block mb-3 text-body-secondary"><p class="text-primary">(c) 2023 SanValeroWebApp 1.0</p></small>
       </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js%22integrity=%22sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN%22crossorigin=%22anonymous%22%3E</script>
-</footer>
+  </footer>
