@@ -1,4 +1,4 @@
-package com.sanValero.DAO;
+package com.sanValero.dao;
 
 import com.sanValero.Domain.Student;
 
