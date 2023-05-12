@@ -1,4 +1,4 @@
-package com.sanValero.Domain;
+package com.sanValero.domain;
 
 import java.time.LocalDate;
 import lombok.*;

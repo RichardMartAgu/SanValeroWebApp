@@ -3,18 +3,28 @@ package com.sanValero.domain;
 import lombok.*;
 
 @Data
-@RequiredArgsConstructor
 @AllArgsConstructor
+@RequiredArgsConstructor
 @NoArgsConstructor
 @ToString
+@Getter
+@Setter
 public class Subject {
 
-     private int id_subject;
-    @NonNull private String subject_name;
-    @NonNull private String subject_description;
-    @NonNull private String subject_year;
-    @NonNull private String duration;
-    @NonNull private String teacher;
-    @NonNull private String image;
+    private int idSubject;
+    @NonNull
+    private String subjectName;
+    @NonNull
+    private String subjectDescription;
+    @NonNull
+    private String subjectYear;
+    @NonNull
+    private String duration;
+    @NonNull
+    private String teacher;
+    @NonNull
+    private String image;
+
+
 
 }

@@ -1,6 +1,6 @@
 package com.sanValero.dao;
 
-import com.sanValero.Domain.Student;
+import com.sanValero.domain.Student;
 
 import java.util.List;
 import org.jdbi.v3.sqlobject.customizer.Bind;

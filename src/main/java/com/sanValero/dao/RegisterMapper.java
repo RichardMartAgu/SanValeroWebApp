@@ -1,8 +1,8 @@
-package com.sanValero.DAO;
+package com.sanValero.dao;
 
-import com.sanValero.Domain.Register;
-import com.sanValero.Domain.Student;
-import com.sanValero.Domain.Subject;
+import com.sanValero.domain.Register;
+import com.sanValero.domain.Student;
+import com.sanValero.domain.Subject;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

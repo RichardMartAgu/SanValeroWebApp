@@ -5,31 +5,14 @@
   </component>
   <component name="ChangeListManager">
 
-    <list default="true" id="da94cc3d-5218-4e96-893d-36cafe7bc1f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/DAO/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/DAO/RegisterMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/DAO/Register_DAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/DAO/StudentDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/DAO/StudentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/DAO/SubjectDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/DAO/SubjectMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/Domain/Register.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/Domain/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/Domain/Subject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/servlet/AddRegisterServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/servlet/DeleteRegisterServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/servlet/SearchRegisterServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/util/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/registers.jsp" afterDir="false" />
+    <list default="true" id="da94cc3d-5218-4e96-893d-36cafe7bc1f2" name="Changes" comment="list registers CHANGE">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/logo_web_70_aniversario_san_valero.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/src/main/webApp/Includes/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Includes/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webApp/Includes/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Includes/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webApp/META-INF/context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webApp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webApp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/includes/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/includes/footer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/includes/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/includes/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,14 +25,26 @@
       </list>
     </option>
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/develop" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+
+        <entry key="$PROJECT_DIR$" value="develop" />
+
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2PeSxg8NcGvDukUVL8jQPeWC4Sa" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -57,23 +52,21 @@
 
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-
-    "last_opened_file_path": "C:/Users/sanph/OneDrive/Escritorio/presencial/SanValeroWebApp/src/main/java"
+    "last_opened_file_path": "C:/Users/sanph/OneDrive/Escritorio/presencial/SanValeroWebApp/src/main/webapp"
 
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-
+      <recent name="C:\Users\sanph\OneDrive\Escritorio\presencial\SanValeroWebApp\src\main\webapp" />
       <recent name="C:\Users\sanph\OneDrive\Escritorio\presencial\SanValeroWebApp\src\main\java" />
       <recent name="C:\Users\richa\IdeaProjects\SanValeroWebApp\src\main\webApp\util" />
       <recent name="C:\Users\richa\IdeaProjects\SanValeroWebApp\src\main\webApp" />
       <recent name="C:\Users\richa\IdeaProjects\SanValeroWebApp2\src\main\webApp\WEB-INF" />
-      <recent name="C:\Users\richa\IdeaProjects\SanValeroWebApp2\src\main\webApp" />
-
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\richa\IdeaProjects\SanValeroWebApp\src\main\java\com\sanValero" />
@@ -81,22 +74,8 @@
       <recent name="C:\Users\richa\IdeaProjects\SanValeroWebApp2\src\main\webApp\WEB-INF" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.sanValero.dao.dao" />
       <recent name="util" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -114,14 +93,28 @@
       <option name="project" value="LOCAL" />
       <updated>1683818548144</updated>
     </task>
-    <task id="LOCAL-00002" summary="Database connection">
-      <created>1683879943486</created>
+    <task id="LOCAL-00002" summary="list registers OK">
+      <created>1683898781713</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1683879943487</updated>
+      <updated>1683898781714</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="list registers CHANGE">
+      <created>1683903203749</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683903203749</updated>
+    </task>
+    <task id="LOCAL-00004" summary="list registers CHANGE">
+      <created>1683903354292</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683903354292</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -136,8 +129,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial commit" />
-    <MESSAGE value="Database connection" />
-    <option name="LAST_COMMIT_MESSAGE" value="Database connection" />
+    <MESSAGE value="list registers OK" />
+    <MESSAGE value="list registers CHANGE" />
+    <option name="LAST_COMMIT_MESSAGE" value="list registers CHANGE" />
   </component>
 </project>

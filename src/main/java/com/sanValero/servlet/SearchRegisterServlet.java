@@ -1,8 +1,8 @@
 package com.sanValero.servlet;
 
-import com.sanValero.DAO.Database;
-import com.sanValero.DAO.SubjectDAO;
-import com.sanValero.Domain.Subject;
+import com.sanValero.dao.Database;
+import com.sanValero.dao.SubjectDAO;
+import com.sanValero.domain.Subject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;

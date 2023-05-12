@@ -1,6 +1,6 @@
 package com.sanValero.dao;
 
-import com.sanValero.Domain.Student;
+import com.sanValero.domain.Student;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
