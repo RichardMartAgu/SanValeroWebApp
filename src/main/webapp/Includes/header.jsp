@@ -1,24 +1,29 @@
+
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
-<html lang="es"data-bs-theme="dark">
+<html lang="es">
+
 
 <head>
     <meta charset="UTF-8">
     <title>SanValeroWebApp</title>
+
 <script src="https://cdn.jsdelivr.net/npm/popper.js@2.9.3/dist/umd/popper.min.js%22%3E</script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js%22%3E</script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js%22%3E</script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css%22%3E
+
 <style>
     .logo-image {
       height: 60px;
       width: auto;
       margin-right: 20px;
 }
-
 
 </style>
 </head>
@@ -33,8 +38,12 @@ pageEncoding="UTF-8"%>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link text-dark" href="#seccion2">Students</a>
+
+
+        <a class="nav-link text-dark" href="list-students.jsp">Students</a>
         <a class="nav-link text-dark" href="#seccion3">Subjects</a>
+
+
       </div>
     </div>
   </div>

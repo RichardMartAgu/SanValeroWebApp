@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+
     <list default="true" id="da94cc3d-5218-4e96-893d-36cafe7bc1f2" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/DAO/Database.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/DAO/RegisterMapper.java" afterDir="false" />
@@ -22,6 +23,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/webapp/registers.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/src/main/webApp/Includes/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Includes/footer.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webApp/Includes/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Includes/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webApp/META-INF/context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" afterDir="false" />
@@ -52,21 +54,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+
     "last_opened_file_path": "C:/Users/sanph/OneDrive/Escritorio/presencial/SanValeroWebApp/src/main/java"
+
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+
       <recent name="C:\Users\sanph\OneDrive\Escritorio\presencial\SanValeroWebApp\src\main\java" />
       <recent name="C:\Users\richa\IdeaProjects\SanValeroWebApp\src\main\webApp\util" />
       <recent name="C:\Users\richa\IdeaProjects\SanValeroWebApp\src\main\webApp" />
       <recent name="C:\Users\richa\IdeaProjects\SanValeroWebApp2\src\main\webApp\WEB-INF" />
       <recent name="C:\Users\richa\IdeaProjects\SanValeroWebApp2\src\main\webApp" />
+
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\richa\IdeaProjects\SanValeroWebApp\src\main\java\com\sanValero" />
@@ -74,8 +81,22 @@
       <recent name="C:\Users\richa\IdeaProjects\SanValeroWebApp2\src\main\webApp\WEB-INF" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.sanValero.dao.dao" />
       <recent name="util" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -93,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683818548144</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Database connection">
+      <created>1683879943486</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1683879943487</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -109,6 +137,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Database connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Database connection" />
   </component>
 </project>

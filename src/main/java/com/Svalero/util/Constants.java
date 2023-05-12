@@ -1,4 +1,4 @@
-package util;
+package com.Svalero.util;
 
 public class Constants {
 
