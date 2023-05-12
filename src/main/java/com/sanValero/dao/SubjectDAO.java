@@ -25,7 +25,7 @@ public interface SubjectDAO {
 
   @SqlQuery("SELECT * FROM SUBJECTS WHERE id_subject = ?")
   @UseRowMapper(SubjectMapper.class)
-  Subject searchSubject(int id_subject);
+  Subject searchSubjectById(int id_subject);
 
   @SqlUpdate(
       "UPDATE SUBJECTS SET name_p = ?, description_p = ?, format_p = ?,"

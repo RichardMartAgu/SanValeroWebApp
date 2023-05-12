@@ -9,7 +9,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="icon" href="">
+    <link rel="icon" href="resources/favicon.ico">
 
     <title>SAN VALERO WEB </title>
 
@@ -51,7 +51,7 @@
               <a class="nav-link" href="list-subjects.jsp" style="color: black;">SUBJECTS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="registers.jsp" style="color: black;">REGISTERS</a>
+              <a class="nav-link" href="list-registers.jsp" style="color: black;">REGISTERS</a>
             </li>
           </ul>
            <a class="navbar-brand mx-auto" href="index.jsp">

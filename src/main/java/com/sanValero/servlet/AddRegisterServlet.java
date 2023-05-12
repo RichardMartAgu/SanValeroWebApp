@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
 
-@WebServlet("/addBuy")
+@WebServlet("/addRegister")
 @MultipartConfig
 public class AddRegisterServlet extends HttpServlet {
 
@@ -38,25 +38,25 @@ public class AddRegisterServlet extends HttpServlet {
             Database.connect();
 
             Student student = Database.jdbi.withExtension(StudentDAO.class,
-                    dao -> dao.searchStudent(id_student));
+                    dao -> dao.searchStudentById(id_student));
 
 
             Subject subject = Database.jdbi.withExtension(SubjectDAO.class,
-                    dao -> dao.searchSubject(id_subject));
+                    dao -> dao.searchSubjectById(id_subject));
 
 
 
 
             if (student == null) {
                 out.println("<script type=\"text/javascript\">");
-                out.println("alert('EL CLIENTE NO EXISTE');");
-                out.println("location='registerBuy.jsp';");
+                out.println("alert('STUDENT NOT FOUND');");
+                out.println("location='addRegister.jsp';");
                 out.println("</script>");
 
             } else if (subject == null) {
                 out.println("<script type=\"text/javascript\">");
-                out.println("alert('EL PRODUCTO NO EXISTE');");
-                out.println("location='registerBuy.jsp';");
+                out.println("alert('SUBJECT NOT FOUND');");
+                out.println("location='addRegister.jsp';");
                 out.println("</script>");
 
             } else {
@@ -64,7 +64,7 @@ public class AddRegisterServlet extends HttpServlet {
                     dao.addRegister(id_student, id_subject, localDate);
                     return null;
                 });
-                String url = "registerOk.jsp";
+                String url = "addRegisterOK.jsp";
                 response.sendRedirect(url);
             }
         } catch (ClassNotFoundException cnfe) {
