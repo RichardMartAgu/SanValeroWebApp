@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da94cc3d-5218-4e96-893d-36cafe7bc1f2" name="Changes" comment="list registers CHANGE">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/logo_web_70_aniversario_san_valero.jpg" afterDir="false" />
+    <list default="true" id="da94cc3d-5218-4e96-893d-36cafe7bc1f2" name="Changes" comment="add index">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/20230428_114353.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/CARTEL GENERAL FERIA DE LA SEGUNDA OPORTUNIDAD_0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/FORO.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/includes/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/includes/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/includes/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/includes/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/bachillerato.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/bachillerato.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683903354292</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add index">
+      <created>1683908162367</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683908162367</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -124,6 +132,7 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="list registers OK" />
     <MESSAGE value="list registers CHANGE" />
-    <option name="LAST_COMMIT_MESSAGE" value="list registers CHANGE" />
+    <MESSAGE value="add index" />
+    <option name="LAST_COMMIT_MESSAGE" value="add index" />
   </component>
 </project>
