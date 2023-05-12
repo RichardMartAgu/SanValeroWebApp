@@ -5,13 +5,16 @@
 <main>
 <div>
 
+    <a class="nav-link" href="registers.jsp" style="color: black;">MATRÍCULACIONES <span class="sr-only">(current)</span></a>
+</div>
+
+
 
 
 </div>
 
 
-<%@include file="Includes/header.jsp"%>
-<main>
+
 <body>
 <div id="seccion3" class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
@@ -23,6 +26,7 @@
 
 </div>
 </body>
+
 
 </main>
 <%@include file="Includes/footer.jsp"%>
