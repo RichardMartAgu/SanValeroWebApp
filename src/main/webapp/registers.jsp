@@ -1,21 +1,21 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<%@ page import="com.sanValero.DAO.Database" %>
-<%@ page import="com.sanValero.DAO.Register_DAO" %>
-<%@ page import="com.sanValero.Domain.Register" %>
+<%@ page import="com.sanValero.dao.Database" %>
+<%@ page import="com.sanValero.dao.RegisterDAO" %>
+<%@ page import="com.sanValero.domain.Register" %>
 
 
 <%@ page import="java.util.List" %>
 
 
-<%@include file="Includes/header.jsp"%>
+<%@include file="includes/header.jsp"%>
 <main>
 
 
 
 
-    <h2 style="text-align: center;">LISTA DE MATRÍCULAS</h2>
+    <h2 style="text-align: center;">REGISTERS LIST</h2>
 
   <div class="album py-5 bg-body-tertiary">
     <div class="container">
@@ -25,7 +25,7 @@
                 <%
                   Class.forName("com.mysql.cj.jdbc.Driver");
                   Database.connect();
-                  List<Register> registerList = Database.jdbi.withExtension(Register_DAO.class, Register_DAO::getRegisters);
+                  List<Register> registerList = Database.jdbi.withExtension(RegisterDAO.class, RegisterDAO::getRegisters);
                       for (Register register:
                            registerList) {
                   int idc = register.getId_register();
@@ -81,4 +81,4 @@
 </main>
 
 
-<%@include file="Includes/footer.jsp"%>
+<%@include file="includes/footer.jsp"%>

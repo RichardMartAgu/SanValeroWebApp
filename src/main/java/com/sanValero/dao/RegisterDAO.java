@@ -1,6 +1,6 @@
-package com.sanValero.DAO;
+package com.sanValero.dao;
 
-import com.sanValero.Domain.Register;
+import com.sanValero.domain.Register;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -8,7 +8,7 @@ import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 import org.jdbi.v3.sqlobject.statement.UseRowMapper;
 
-public interface Register_DAO {
+public interface RegisterDAO {
 
     @SqlQuery("SELECT * FROM REGISTERS")
     @UseRowMapper(RegisterMapper.class)

@@ -1,16 +1,16 @@
-<%@ page import="com.Svalero.dao.Database" %>
-<%@ page import="com.Svalero.dao.StudentDAO" %>
-<%@ page import="com.Svalero.domain.Student" %>
+<%@ page import="com.sanValero.dao.Database" %>
+<%@ page import="com.sanValero.dao.StudentDAO" %>
+<%@ page import="com.sanValero.domain.Student" %>
 <%@ page import="java.util.List" %>
 
-<%@include file="Includes/header.jsp"%>
+<%@include file="includes/header.jsp"%>
  <main>
 
 <!DOCTYPE html>
 <html lang="es">
 
 <div class="album py-5 bg-body-tertiary">
-<div class="container">
+<div class="container " style="margin-top: 50px">
 
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
        <%

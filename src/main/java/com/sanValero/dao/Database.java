@@ -1,10 +1,10 @@
 package com.sanValero.dao;
 
+import static com.sanValero.util.Constants.*;
+
 import org.jdbi.v3.core.Handle;
 import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.sqlobject.SqlObjectPlugin;
-
-import static com.sanValero.util.Constants.*;
 
 public class Database {
 

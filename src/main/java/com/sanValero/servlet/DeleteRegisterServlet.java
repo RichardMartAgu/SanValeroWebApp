@@ -1,7 +1,7 @@
 package com.sanValero.servlet;
 
-import com.sanValero.DAO.Register_DAO;
-import com.sanValero.DAO.Database;
+import com.sanValero.dao.RegisterDAO;
+import com.sanValero.dao.Database;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
@@ -26,7 +26,7 @@ public class DeleteRegisterServlet extends HttpServlet {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Database.connect();
 
-            Database.jdbi.withExtension(Register_DAO.class, dao -> {
+            Database.jdbi.withExtension(RegisterDAO.class, dao -> {
                 dao.deleteRegister(id);
                 return null;
             });

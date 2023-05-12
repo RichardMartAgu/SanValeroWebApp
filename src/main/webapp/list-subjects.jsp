@@ -3,8 +3,8 @@
 <%@ page import="com.sanValero.dao.SubjectDAO" %>
 <%@ page import="java.util.List" %>
 
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@include file="Includes/header.jsp"%>
+
+<%@include file="includes/header.jsp"%>
 
 <div class="d-flex justify-content-center">
   <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
@@ -32,8 +32,8 @@
 
       <rect width="100%" height="100%" fill="var(--bs-secondary-color)" opacity="0"></rect>
      </svg>
-     <h2 class="fw-normal"><%= subject.getSubject_name() %></h2>
-     <h2 class="fw-normal"><%= subject.getSubject_description() %></h2>
+     <h2 class="fw-normal"><%= subject.getSubjectName() %></h2>
+     <h2 class="fw-normal"><%= subject.getSubjectDescription() %></h2>
    </div>
   <%
       }
@@ -41,4 +41,4 @@
    </div>
  </main>
 
-<%@include file="Includes/footer.jsp"%>
+<%@include file="includes/footer.jsp"%>
