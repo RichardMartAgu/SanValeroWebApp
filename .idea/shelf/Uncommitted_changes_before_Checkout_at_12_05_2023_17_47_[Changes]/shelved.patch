@@ -1,0 +1,489 @@
+Index: src/main/java/com/sanValero/DAO/Database.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.sanValero.DAO;\r\n\r\nimport static com.sanValero.util.Constants.*;\r\n\r\nimport org.jdbi.v3.core.Handle;\r\nimport org.jdbi.v3.core.Jdbi;\r\nimport org.jdbi.v3.sqlobject.SqlObjectPlugin;\r\n\r\npublic class Database {\r\n\r\n    public static Jdbi jdbi;\r\n    public static Handle db;\r\n\r\n    public static void connect() {\r\n        jdbi = Jdbi.create(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);\r\n        jdbi.installPlugin(new SqlObjectPlugin());\r\n        db = jdbi.open();\r\n    }\r\n\r\n    public static void close() {\r\n        db.close();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/sanValero/DAO/Database.java b/src/main/java/com/sanValero/DAO/Database.java
+--- a/src/main/java/com/sanValero/DAO/Database.java	(revision c3c4f1f9fedf222d62394f36a64f5a8e93c466eb)
++++ b/src/main/java/com/sanValero/DAO/Database.java	(date 1683906392584)
+@@ -1,11 +1,11 @@
+-package com.sanValero.DAO;
+-
+-import static com.sanValero.util.Constants.*;
++package com.sanValero.dao;
+ 
+ import org.jdbi.v3.core.Handle;
+ import org.jdbi.v3.core.Jdbi;
+ import org.jdbi.v3.sqlobject.SqlObjectPlugin;
+ 
++import static com.sanValero.util.Constants.*;
++
+ public class Database {
+ 
+     public static Jdbi jdbi;
+@@ -20,4 +20,4 @@
+     public static void close() {
+         db.close();
+     }
+-}
++}
+\ No newline at end of file
+Index: src/main/java/com/sanValero/DAO/SubjectDAO.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.sanValero.DAO;\r\n\r\n\r\nimport com.sanValero.Domain.Subject;\r\n\r\nimport java.util.List;\r\nimport org.jdbi.v3.sqlobject.customizer.Bind;\r\nimport org.jdbi.v3.sqlobject.statement.SqlQuery;\r\nimport org.jdbi.v3.sqlobject.statement.SqlUpdate;\r\nimport org.jdbi.v3.sqlobject.statement.UseRowMapper;\r\n\r\npublic interface SubjectDAO {\r\n\r\n    @SqlQuery(\"SELECT * FROM SUBJECTS\")\r\n    @UseRowMapper(SubjectMapper.class)\r\n    List<Subject> getSubject();\r\n\r\n    @SqlUpdate(\"INSERT INTO SUBJECTS (subject_name, subject_description, subject_year, duration, teacher, image) VALUES (?, ?, ?, ?, ?)\")\r\n    void addProduct(String name, String description, String year, String duration, String teacher, String image);\r\n\r\n    @SqlUpdate(\"DELETE FROM SUBJECTS WHERE id_subject = ?\")\r\n    void deleteProduct(int id_product);\r\n\r\n\r\n    @SqlQuery(\"SELECT * FROM SUBJECTS WHERE id_subject = ?\")\r\n    @UseRowMapper(SubjectMapper.class)\r\n    Subject searchSubject(int id_subject);\r\n\r\n    @SqlUpdate(\"UPDATE SUBJECTS SET name_p = ?, description_p = ?, format_p = ?,\" +\r\n            \"price = ? WHERE ID_PRODUCT= ?\")\r\n    void modifyProduct(String name_p, String description_p, int format_p, float price, int id_product);\r\n\r\n    @SqlUpdate(\"UPDATE SUBJECTS SET image= ? WHERE ID_PRODUCT= ?\")\r\n    void modifyImageProduct(String image, int id_product);\r\n\r\n    @SqlQuery(\"SELECT * FROM SUBJECTS WHERE SUBJECT_NAME like ? or TEACHER like ?\")\r\n    @UseRowMapper(SubjectMapper.class)\r\n    List<Subject> searchSubjectByNameOrTeacher(@Bind(\"name_p\") String name_p, @Bind(\"description_p\") String description_p);\r\n\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/sanValero/DAO/SubjectDAO.java b/src/main/java/com/sanValero/DAO/SubjectDAO.java
+--- a/src/main/java/com/sanValero/DAO/SubjectDAO.java	(revision c3c4f1f9fedf222d62394f36a64f5a8e93c466eb)
++++ b/src/main/java/com/sanValero/DAO/SubjectDAO.java	(date 1683906392618)
+@@ -1,41 +1,18 @@
+-package com.sanValero.DAO;
+-
++package com.sanValero.dao;
+ 
+-import com.sanValero.Domain.Subject;
+-
+-import java.util.List;
+-import org.jdbi.v3.sqlobject.customizer.Bind;
++import com.sanValero.domain.Subject;
+ import org.jdbi.v3.sqlobject.statement.SqlQuery;
+-import org.jdbi.v3.sqlobject.statement.SqlUpdate;
+ import org.jdbi.v3.sqlobject.statement.UseRowMapper;
++import java.util.List;
+ 
+ public interface SubjectDAO {
+ 
+-    @SqlQuery("SELECT * FROM SUBJECTS")
+-    @UseRowMapper(SubjectMapper.class)
+-    List<Subject> getSubject();
++  @SqlQuery("SELECT * FROM Subjects")
++  @UseRowMapper(SubjectMapper.class)
++  List<Subject> getSubject();
+ 
+-    @SqlUpdate("INSERT INTO SUBJECTS (subject_name, subject_description, subject_year, duration, teacher, image) VALUES (?, ?, ?, ?, ?)")
+-    void addProduct(String name, String description, String year, String duration, String teacher, String image);
+-
+-    @SqlUpdate("DELETE FROM SUBJECTS WHERE id_subject = ?")
+-    void deleteProduct(int id_product);
+-
+-
+-    @SqlQuery("SELECT * FROM SUBJECTS WHERE id_subject = ?")
+-    @UseRowMapper(SubjectMapper.class)
+-    Subject searchSubject(int id_subject);
+-
+-    @SqlUpdate("UPDATE SUBJECTS SET name_p = ?, description_p = ?, format_p = ?," +
+-            "price = ? WHERE ID_PRODUCT= ?")
+-    void modifyProduct(String name_p, String description_p, int format_p, float price, int id_product);
+-
+-    @SqlUpdate("UPDATE SUBJECTS SET image= ? WHERE ID_PRODUCT= ?")
+-    void modifyImageProduct(String image, int id_product);
+-
+-    @SqlQuery("SELECT * FROM SUBJECTS WHERE SUBJECT_NAME like ? or TEACHER like ?")
+-    @UseRowMapper(SubjectMapper.class)
+-    List<Subject> searchSubjectByNameOrTeacher(@Bind("name_p") String name_p, @Bind("description_p") String description_p);
+-
++  @SqlQuery("SELECT * FROM Subjects WHERE Id_Subject = ?")
++  @UseRowMapper(SubjectMapper.class)
++  Subject getSubject(int subject);
+ 
+ }
+\ No newline at end of file
+Index: src/main/java/com/Svalero/util/Constants.java
+===================================================================
+diff --git a/src/main/java/com/Svalero/util/Constants.java b/src/main/java/com/Svalero/util/Constants.java
+deleted file mode 100644
+--- a/src/main/java/com/Svalero/util/Constants.java	(revision c3c4f1f9fedf222d62394f36a64f5a8e93c466eb)
++++ /dev/null	(revision c3c4f1f9fedf222d62394f36a64f5a8e93c466eb)
+@@ -1,8 +0,0 @@
+-package com.Svalero.util;
+-
+-public class Constants {
+-
+-  public static String DATABASE_URL = "jdbc:mysql://localhost:3306/sanvalero";
+-  public static String DATABASE_USERNAME = "SanValeroAdmin";
+-  public static String DATABASE_PASSWORD = "1234";
+-}
+Index: src/main/java/com/Svalero/dao/StudentDAO.java
+===================================================================
+diff --git a/src/main/java/com/Svalero/dao/StudentDAO.java b/src/main/java/com/Svalero/dao/StudentDAO.java
+deleted file mode 100644
+--- a/src/main/java/com/Svalero/dao/StudentDAO.java	(revision c3c4f1f9fedf222d62394f36a64f5a8e93c466eb)
++++ /dev/null	(revision c3c4f1f9fedf222d62394f36a64f5a8e93c466eb)
+@@ -1,19 +0,0 @@
+-package com.Svalero.dao;
+-
+-import com.Svalero.domain.Student;
+-import org.jdbi.v3.sqlobject.statement.SqlQuery;
+-import org.jdbi.v3.sqlobject.statement.UseRowMapper;
+-
+-import java.util.List;
+-
+-public interface StudentDAO {
+-
+-    @SqlQuery("SELECT * FROM students")
+-    @UseRowMapper(StudentMapper.class)
+-    List<Student> getStudents();
+-
+-
+-    @SqlQuery("SELECT * FROM students WHERE id_student = ?")
+-    @UseRowMapper(StudentMapper.class)
+-    Student getStudentById(int id_student);
+-}
+\ No newline at end of file
+Index: src/main/java/com/Svalero/domain/Student.java
+===================================================================
+diff --git a/src/main/java/com/Svalero/domain/Student.java b/src/main/java/com/Svalero/domain/Student.java
+deleted file mode 100644
+--- a/src/main/java/com/Svalero/domain/Student.java	(revision c3c4f1f9fedf222d62394f36a64f5a8e93c466eb)
++++ /dev/null	(revision c3c4f1f9fedf222d62394f36a64f5a8e93c466eb)
+@@ -1,24 +0,0 @@
+-package com.Svalero.domain;
+-
+-import lombok.*;
+-
+-@Data
+-@RequiredArgsConstructor
+-@AllArgsConstructor
+-@ToString
+-public class Student {
+-
+-    private int id_student;
+-    @NonNull
+-    private String firstName;
+-    @NonNull
+-    private String lastName;
+-    @NonNull
+-    private String dni;
+-    @NonNull
+-    private String address;
+-    @NonNull
+-    private String telephone;
+-    @NonNull
+-    private String image;
+-}
+Index: src/main/java/com/Svalero/dao/StudentMapper.java
+===================================================================
+diff --git a/src/main/java/com/Svalero/dao/StudentMapper.java b/src/main/java/com/Svalero/dao/StudentMapper.java
+deleted file mode 100644
+--- a/src/main/java/com/Svalero/dao/StudentMapper.java	(revision c3c4f1f9fedf222d62394f36a64f5a8e93c466eb)
++++ /dev/null	(revision c3c4f1f9fedf222d62394f36a64f5a8e93c466eb)
+@@ -1,21 +0,0 @@
+-package com.Svalero.dao;
+-
+-import com.Svalero.domain.Student;
+-import org.jdbi.v3.core.mapper.RowMapper;
+-import org.jdbi.v3.core.statement.StatementContext;
+-import java.sql.ResultSet;
+-import java.sql.SQLException;
+-
+-public class StudentMapper implements RowMapper<Student> {
+-
+-    @Override
+-    public Student map(ResultSet rs, StatementContext ctx) throws SQLException {
+-        return new Student(rs.getInt("id_student"),
+-                rs.getString("first_name"),
+-                rs.getString("last_name"),
+-                rs.getString("dni"),
+-                rs.getString("address"),
+-                rs.getString("telephone"),
+-                rs.getString("image"));
+-    }
+-}
+Index: src/main/java/com/Svalero/dao/Database.java
+===================================================================
+diff --git a/src/main/java/com/Svalero/dao/Database.java b/src/main/java/com/Svalero/dao/Database.java
+deleted file mode 100644
+--- a/src/main/java/com/Svalero/dao/Database.java	(revision c3c4f1f9fedf222d62394f36a64f5a8e93c466eb)
++++ /dev/null	(revision c3c4f1f9fedf222d62394f36a64f5a8e93c466eb)
+@@ -1,19 +0,0 @@
+-package com.Svalero.dao;
+-
+-import org.jdbi.v3.core.Handle;
+-import org.jdbi.v3.core.Jdbi;
+-import org.jdbi.v3.sqlobject.SqlObjectPlugin;
+-import static com.Svalero.util.Constants.*;
+-
+-public class Database {
+-    public static Jdbi jdbi;
+-    public static Handle db;
+-    public static void connect() {
+-        jdbi = Jdbi.create(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
+-        jdbi.installPlugin(new SqlObjectPlugin());
+-        db = jdbi.open();
+-    }
+-    public static void close() {
+-        db.close();
+-    }
+-}
+Index: src/main/java/com/Svalero/util/DateUtils.java
+===================================================================
+diff --git a/src/main/java/com/Svalero/util/DateUtils.java b/src/main/java/com/Svalero/util/DateUtils.java
+deleted file mode 100644
+--- a/src/main/java/com/Svalero/util/DateUtils.java	(revision c3c4f1f9fedf222d62394f36a64f5a8e93c466eb)
++++ /dev/null	(revision c3c4f1f9fedf222d62394f36a64f5a8e93c466eb)
+@@ -1,15 +0,0 @@
+-package com.Svalero.util;
+-
+-import java.sql.Date;
+-import java.time.LocalDate;
+-
+-public class DateUtils {
+-
+-  public static Date getDate(LocalDate localDate) {
+-    return Date.valueOf(localDate);
+-  }
+-
+-  public static LocalDate getLocalDate(Date date) {
+-    return new Date(date.getTime()).toLocalDate();
+-  }
+-}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n\r\n    <list default=\"true\" id=\"da94cc3d-5218-4e96-893d-36cafe7bc1f2\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/sanValero/DAO/Database.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/sanValero/DAO/RegisterMapper.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/sanValero/DAO/Register_DAO.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/sanValero/DAO/StudentDAO.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/sanValero/DAO/StudentMapper.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/sanValero/DAO/SubjectDAO.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/sanValero/DAO/SubjectMapper.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/sanValero/Domain/Register.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/sanValero/Domain/Student.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/sanValero/Domain/Subject.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/sanValero/servlet/AddRegisterServlet.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/sanValero/servlet/DeleteRegisterServlet.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/sanValero/servlet/SearchRegisterServlet.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/sanValero/util/Constants.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/webapp/registers.jsp\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pom.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/pom.xml\" afterDir=\"false\" />\r\n\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webApp/Includes/footer.jsp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/Includes/footer.jsp\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webApp/Includes/header.jsp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/Includes/header.jsp\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webApp/META-INF/context.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/META-INF/context.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webApp/WEB-INF/web.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webApp/index.jsp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/index.jsp\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2PeSxg8NcGvDukUVL8jQPeWC4Sa\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n\r\n    \"last_opened_file_path\": \"C:/Users/sanph/OneDrive/Escritorio/presencial/SanValeroWebApp/src/main/java\"\r\n\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n\r\n      <recent name=\"C:\\Users\\sanph\\OneDrive\\Escritorio\\presencial\\SanValeroWebApp\\src\\main\\java\" />\r\n      <recent name=\"C:\\Users\\richa\\IdeaProjects\\SanValeroWebApp\\src\\main\\webApp\\util\" />\r\n      <recent name=\"C:\\Users\\richa\\IdeaProjects\\SanValeroWebApp\\src\\main\\webApp\" />\r\n      <recent name=\"C:\\Users\\richa\\IdeaProjects\\SanValeroWebApp2\\src\\main\\webApp\\WEB-INF\" />\r\n      <recent name=\"C:\\Users\\richa\\IdeaProjects\\SanValeroWebApp2\\src\\main\\webApp\" />\r\n\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\richa\\IdeaProjects\\SanValeroWebApp\\src\\main\\java\\com\\sanValero\" />\r\n      <recent name=\"C:\\Users\\richa\\IdeaProjects\\SanValeroWebApp2\\src\\main\\webApp\" />\r\n      <recent name=\"C:\\Users\\richa\\IdeaProjects\\SanValeroWebApp2\\src\\main\\webApp\\WEB-INF\" />\r\n    </key>\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"com.sanValero.dao.dao\" />\r\n      <recent name=\"util\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration default=\"true\" type=\"JetRunConfigurationType\">\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"KotlinStandaloneScriptRunConfigurationType\">\r\n      <option name=\"filePath\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"da94cc3d-5218-4e96-893d-36cafe7bc1f2\" name=\"Changes\" comment=\"\" />\r\n      <created>1683816303694</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1683816303694</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Initial commit\">\r\n      <created>1683818548144</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1683818548144</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Database connection\">\r\n      <created>1683879943486</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1683879943487</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Initial commit\" />\r\n    <MESSAGE value=\"Database connection\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Database connection\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision c3c4f1f9fedf222d62394f36a64f5a8e93c466eb)
++++ b/.idea/workspace.xml	(date 1683906392609)
+@@ -4,31 +4,27 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-
+-    <list default="true" id="da94cc3d-5218-4e96-893d-36cafe7bc1f2" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/DAO/Database.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/DAO/RegisterMapper.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/DAO/Register_DAO.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/DAO/StudentDAO.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/DAO/StudentMapper.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/DAO/SubjectDAO.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/DAO/SubjectMapper.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/Domain/Register.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/Domain/Student.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/Domain/Subject.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/servlet/AddRegisterServlet.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/servlet/DeleteRegisterServlet.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/servlet/SearchRegisterServlet.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/util/Constants.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/webapp/registers.jsp" afterDir="false" />
++    <list default="true" id="da94cc3d-5218-4e96-893d-36cafe7bc1f2" name="Changes" comment="list registers OK">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+-
+-      <change beforePath="$PROJECT_DIR$/src/main/webApp/Includes/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Includes/footer.jsp" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/webApp/Includes/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Includes/header.jsp" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/webApp/META-INF/context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/webApp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/webApp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/sanValero/DAO/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/dao/Database.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/sanValero/DAO/RegisterMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/dao/RegisterMapper.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/sanValero/DAO/Register_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/dao/RegisterDAO.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/sanValero/DAO/StudentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/dao/StudentDAO.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/sanValero/DAO/StudentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/dao/StudentMapper.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/sanValero/DAO/SubjectDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/dao/SubjectDAO.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/sanValero/DAO/SubjectMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/dao/SubjectMapper.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/sanValero/Domain/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/domain/Register.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/sanValero/Domain/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/domain/Student.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/sanValero/Domain/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/domain/Subject.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/sanValero/servlet/AddRegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/servlet/AddRegisterServlet.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/sanValero/servlet/DeleteRegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/servlet/DeleteRegisterServlet.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/sanValero/servlet/SearchRegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sanValero/servlet/SearchRegisterServlet.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/util/Constants.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/util/DateUtils.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/webapp/Includes/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/includes/footer.jsp" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/webapp/Includes/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/includes/header.jsp" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/webapp/registers.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/registers.jsp" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -54,26 +50,21 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-
+   <component name="PropertiesComponent"><![CDATA[{
+   "keyToString": {
+     "RunOnceActivity.OpenProjectViewOnStart": "true",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-
+-    "last_opened_file_path": "C:/Users/sanph/OneDrive/Escritorio/presencial/SanValeroWebApp/src/main/java"
+-
++    "last_opened_file_path": "C:/Users/sanph/OneDrive/Escritorio/presencial/SanValeroWebApp/src/main/webapp"
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+-
++      <recent name="C:\Users\sanph\OneDrive\Escritorio\presencial\SanValeroWebApp\src\main\webapp" />
+       <recent name="C:\Users\sanph\OneDrive\Escritorio\presencial\SanValeroWebApp\src\main\java" />
+       <recent name="C:\Users\richa\IdeaProjects\SanValeroWebApp\src\main\webApp\util" />
+       <recent name="C:\Users\richa\IdeaProjects\SanValeroWebApp\src\main\webApp" />
+       <recent name="C:\Users\richa\IdeaProjects\SanValeroWebApp2\src\main\webApp\WEB-INF" />
+-      <recent name="C:\Users\richa\IdeaProjects\SanValeroWebApp2\src\main\webApp" />
+-
+     </key>
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="C:\Users\richa\IdeaProjects\SanValeroWebApp\src\main\java\com\sanValero" />
+@@ -81,23 +72,9 @@
+       <recent name="C:\Users\richa\IdeaProjects\SanValeroWebApp2\src\main\webApp\WEB-INF" />
+     </key>
+     <key name="CopyClassDialog.RECENTS_KEY">
+-      <recent name="com.sanValero.dao.dao" />
+       <recent name="util" />
+     </key>
+   </component>
+-  <component name="RunManager">
+-    <configuration default="true" type="JetRunConfigurationType">
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+-      <option name="filePath" />
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-  </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+@@ -114,12 +91,12 @@
+       <option name="project" value="LOCAL" />
+       <updated>1683818548144</updated>
+     </task>
+-    <task id="LOCAL-00002" summary="Database connection">
+-      <created>1683879943486</created>
++    <task id="LOCAL-00002" summary="list registers OK">
++      <created>1683898781713</created>
+       <option name="number" value="00002" />
+       <option name="presentableId" value="LOCAL-00002" />
+       <option name="project" value="LOCAL" />
+-      <updated>1683879943487</updated>
++      <updated>1683898781714</updated>
+     </task>
+     <option name="localTasksCounter" value="3" />
+     <servers />
+@@ -137,7 +114,7 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Initial commit" />
+-    <MESSAGE value="Database connection" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Database connection" />
++    <MESSAGE value="list registers OK" />
++    <option name="LAST_COMMIT_MESSAGE" value="list registers OK" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/main/java/com/sanValero/DAO/SubjectMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.sanValero.DAO;\r\n\r\nimport com.sanValero.Domain.Subject;\r\n\r\nimport java.sql.ResultSet;\r\nimport java.sql.SQLException;\r\nimport org.jdbi.v3.core.mapper.RowMapper;\r\nimport org.jdbi.v3.core.statement.StatementContext;\r\n\r\npublic class SubjectMapper implements RowMapper<Subject> {\r\n\r\n    @Override\r\n    public Subject map(ResultSet rs, StatementContext ctx) throws SQLException {\r\n\r\n\r\n        return new Subject(rs.getInt(\"id_subject\"),\r\n                rs.getString(\"subject_name\"),\r\n                rs.getString(\"subject_description\"),\r\n                rs.getString(\"subject_year\"),\r\n                rs.getString(\"duration\"),\r\n                rs.getString(\"teacher\"),\r\n                rs.getString(\"image\")\r\n\r\n        );\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/sanValero/DAO/SubjectMapper.java b/src/main/java/com/sanValero/DAO/SubjectMapper.java
+--- a/src/main/java/com/sanValero/DAO/SubjectMapper.java	(revision c3c4f1f9fedf222d62394f36a64f5a8e93c466eb)
++++ b/src/main/java/com/sanValero/DAO/SubjectMapper.java	(date 1683906392625)
+@@ -1,26 +1,24 @@
+-package com.sanValero.DAO;
++package com.sanValero.dao;
+ 
+-import com.sanValero.Domain.Subject;
+-
+-import java.sql.ResultSet;
+-import java.sql.SQLException;
++import com.sanValero.domain.Subject;
++import com.sanValero.util.DateUtils;
+ import org.jdbi.v3.core.mapper.RowMapper;
+ import org.jdbi.v3.core.statement.StatementContext;
+ 
++import java.sql.ResultSet;
++import java.sql.SQLException;
++
+ public class SubjectMapper implements RowMapper<Subject> {
+ 
+     @Override
+     public Subject map(ResultSet rs, StatementContext ctx) throws SQLException {
+-
+-
+-        return new Subject(rs.getInt("id_subject"),
+-                rs.getString("subject_name"),
+-                rs.getString("subject_description"),
+-                rs.getString("subject_year"),
+-                rs.getString("duration"),
+-                rs.getString("teacher"),
+-                rs.getString("image")
+-
+-        );
++        return new Subject(
++                rs.getInt("ID_SUBJECT"),
++                rs.getString("SUBJECT_NAME"),
++                rs.getString("SUBJECT_DESCRIPTION"),
++                rs.getString("SUBJECT_YEAR"),
++                rs.getString("DURATION"),
++                rs.getString("TEACHER"),
++                rs.getString("IMAGE"));
+     }
+-}
+\ No newline at end of file
++}
+Index: src/main/java/com/sanValero/Domain/Subject.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.sanValero.Domain;\r\n\r\nimport lombok.*;\r\n\r\n@Data\r\n@AllArgsConstructor\r\n@RequiredArgsConstructor\r\n@NoArgsConstructor\r\n@ToString\r\n@Getter\r\n@Setter\r\npublic class Subject {\r\n\r\n    private int id_subject;\r\n    @NonNull\r\n    private String subjectName;\r\n    @NonNull\r\n    private String subjectDescription;\r\n    @NonNull\r\n    private String subjectYear;\r\n    @NonNull\r\n    private String duration;\r\n    @NonNull\r\n    private String teacher;\r\n    @NonNull\r\n    private String image;\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/sanValero/Domain/Subject.java b/src/main/java/com/sanValero/Domain/Subject.java
+--- a/src/main/java/com/sanValero/Domain/Subject.java	(revision c3c4f1f9fedf222d62394f36a64f5a8e93c466eb)
++++ b/src/main/java/com/sanValero/Domain/Subject.java	(date 1683906392633)
+@@ -1,30 +1,20 @@
+-package com.sanValero.Domain;
++package com.sanValero.domain;
+ 
+ import lombok.*;
+ 
+ @Data
+-@AllArgsConstructor
+ @RequiredArgsConstructor
++@AllArgsConstructor
+ @NoArgsConstructor
+ @ToString
+-@Getter
+-@Setter
+ public class Subject {
+ 
+-    private int id_subject;
+-    @NonNull
+-    private String subjectName;
+-    @NonNull
+-    private String subjectDescription;
+-    @NonNull
+-    private String subjectYear;
+-    @NonNull
+-    private String duration;
+-    @NonNull
+-    private String teacher;
+-    @NonNull
+-    private String image;
+-
+-
++     private int id_subject;
++    @NonNull private String subject_name;
++    @NonNull private String subject_description;
++    @NonNull private String subject_year;
++    @NonNull private String duration;
++    @NonNull private String teacher;
++    @NonNull private String image;
+ 
+ }
