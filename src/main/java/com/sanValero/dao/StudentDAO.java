@@ -13,7 +13,7 @@ public interface StudentDAO {
 
 
 
-    @SqlQuery("SELECT * FROM clients")
+    @SqlQuery("SELECT * FROM students")
     @UseRowMapper(StudentMapper.class)
     List<Student> getStudents();
 
