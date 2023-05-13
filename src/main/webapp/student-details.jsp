@@ -5,6 +5,8 @@
 <%@ page contentType="text/html"%>
 <%@ page pageEncoding="UTF-8"%>
 
+<%@include file="includes/header.jsp"%>
+
 <%
     int studentId =Integer.parseInt(request.getParameter("id"));
     Class.forName("com.mysql.cj.jdbc.Driver");
@@ -12,7 +14,7 @@
     Student student = Database.jdbi.withExtension(StudentDAO.class, dao -> dao.getStudent(studentId));
 %>
 
-<%@include file="includes/header.jsp"%>
+
 <main class="p-25">
     <div class="card-custom">
         <div class="card mb-3">

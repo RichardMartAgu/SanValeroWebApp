@@ -79,7 +79,7 @@
            </a>
           <form action="searchStudent" method="post" class="form-inline mt-2 mt-md-0">
             <input class="form-control mr-sm-2" name="search" method="post" type="text" id="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">BUSCAR</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">SEARCH</button>
           </form>
 
         </div>

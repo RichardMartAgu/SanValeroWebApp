@@ -10,7 +10,7 @@
              </ol>
              <div class="carousel-inner" style="padding-top: 80px;" >
                <div class="carousel-item active">
-                 <img class="first-slide" src="resources/bachillerato.jpg" alt="First slide" style="width: 100%; max-height: 500px;">
+                 <img class="first-slide" src="resources/Bachillerato.jpg" alt="First slide" style="width: 100%; max-height: 500px;">
                  <div class="container">
                    <div class="carousel-caption text-right" >
                      <p><a class="btn btn-lg btn-primary" href="#" role="button">+ INFO</a></p>

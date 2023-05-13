@@ -85,11 +85,9 @@
           <version>2.2</version>
           <configuration>
 
-<<<<<<< HEAD
+
             <url>http://localhost:8088/manager/text</url>
-=======
-            <url>http://localhost:8081/manager/text</url>
->>>>>>> 97866fab38a438e6c4e210aa0f808c2544ebe6d9
+
 
             <server>tomcat18</server>
             <path>/SanValeroWebApp</path>
