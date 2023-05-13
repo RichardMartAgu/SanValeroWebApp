@@ -21,17 +21,16 @@ public interface SubjectDAO {
       String name, String description, String year, String duration, String teacher, String image);
 
   @SqlUpdate("DELETE FROM SUBJECTS WHERE id_subject = ?")
-  void deleteProduct(int id_product);
+  void deleteSubject(int idSubject);
 
   @SqlQuery("SELECT * FROM SUBJECTS WHERE id_subject = ?")
   @UseRowMapper(SubjectMapper.class)
-  Subject searchSubject(int id_subject);
+  Subject searchSubjectById(int id_subject);
 
   @SqlUpdate(
-      "UPDATE SUBJECTS SET name_p = ?, description_p = ?, format_p = ?,"
-          + "price = ? WHERE ID_PRODUCT= ?")
-  void modifyProduct(
-      String name_p, String description_p, int format_p, float price, int id_product);
+      "UPDATE SUBJECTS SET SUBJECT_NAME = ?, SUBJECT_DESCRIPTION = ?, SUBJECT_YEAR = ?, DURATION = ?,TEACHER = ? WHERE ID_SUBJECT= ?")
+  void editSubject(
+       String subjecName, String subjectDescription, String subjectYear,int duration, String teacher,int idSubject);
 
   @SqlUpdate("UPDATE SUBJECTS SET image= ? WHERE ID_PRODUCT= ?")
   void modifyImageProduct(String image, int id_product);

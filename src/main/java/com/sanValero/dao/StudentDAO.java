@@ -27,7 +27,7 @@ public interface StudentDAO {
     void editStudent(String firstName, String lastName, String dni, String address, String telephone, String image, int id_student);
     @SqlQuery("SELECT * FROM STUDENTS WHERE id_student=?")
     @UseRowMapper(StudentMapper.class)
-    Student searchStudent(int id_student);
+    Student searchStudentById(int id_student);
 
     @SqlUpdate("DELETE FROM STUDENTS WHERE id_student=?")
     void deleteStudent(int id_student);
