@@ -5,14 +5,6 @@
 
 
 <%@include file="includes/header.jsp"%>
-
-<style>
-    body {
-      background-image: linear-gradient(to bottom, #e1ecf8, #003399);
-
-    }
-  </style>
-
 <main>
  <script>
          function confirmarBorrado(event) {
@@ -33,7 +25,7 @@
            });
          }
  </script>
-
+<body class= "bg">
     <div class="container d-flex align-items-center mt-5">
     <div class="row bg-transparent "style="margin-top: 50px ">
      <%
@@ -67,7 +59,7 @@
    </div>
    </div>
  </main>
+</body>
 
-
-
+</main>
 <%@include file="includes/footer.jsp"%>

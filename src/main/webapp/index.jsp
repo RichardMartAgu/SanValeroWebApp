@@ -10,7 +10,7 @@
              </ol>
              <div class="carousel-inner" style="padding-top: 80px;" >
                <div class="carousel-item active">
-                 <img class="first-slide" src="resources/bachillerato.jpg" alt="First slide" style="width: 100%; max-height: 500px;">
+                 <img class="first-slide" src="resources/Bachillerato.jpg" alt="First slide" style="width: 100%; max-height: 500px;">
                  <div class="container">
                    <div class="carousel-caption text-right" >
                      <p><a class="btn btn-lg btn-primary" href="#" role="button">+ INFO</a></p>
@@ -44,14 +44,7 @@
              </a>
            </div>
 
-
-
-
-
-
-
-          <div class="container marketing">
-
+      <div class="container marketing">
         <div class="row featurette" style="margin-top: 30px; margin-bottom: 30px;">
           <hr class="featurette-divider">
           <h2 style="text-align: center; color: blue;">A C T U A L I T Y</h2>
@@ -60,7 +53,6 @@
             <h2 class="featurette-heading">SECOND DAY OF OPEN DOORS FOR THAT AND BACCALAUREATE <span class="text-muted"></span></h2>
             <p class="lead">Attendees have been able to visit the facilities and have chatted with teachers and students</p>
             <p class="lead">DATE: 04/2023</p>
-
           </div>
           <div class="col-md-5">
             <img class="featurette-image img-fluid mx-auto" src="resources/FORO.jpg" alt="Generic placeholder image">
@@ -101,6 +93,5 @@
 
 
 
-    </main>
-
+ </main>
 <%@include file="includes/footer.jsp"%>

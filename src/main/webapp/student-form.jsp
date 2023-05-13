@@ -43,7 +43,7 @@
     if (action.equals("edit")) buttonText = "Edit";
 %>
 
-<body>
+<body class= "bg">
     <div class="container">
         <nav aria-label="breadcrumb" class="pt-25">
           <ol class="breadcrumb">
@@ -92,7 +92,6 @@
         <div id="result"></div>
     </div>
 </div>
-
 
 
 
