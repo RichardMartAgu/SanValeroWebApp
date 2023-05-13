@@ -17,7 +17,7 @@ public class RegisterMapper implements RowMapper<Register> {
 
         Database.connect();
         Student student = Database.jdbi.withExtension(StudentDAO.class,
-                dao -> dao.searchStudent(rs.getInt("id_student")));
+                dao -> dao.searchStudentById(rs.getInt("id_student")));
 
         Subject subject = Database.jdbi.withExtension(SubjectDAO.class,
                 dao -> dao.searchSubjectById(rs.getInt("id_subject")));

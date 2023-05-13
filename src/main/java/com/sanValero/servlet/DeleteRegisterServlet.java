@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/deleteBuy")
+@WebServlet("/deleteRegister")
 @MultipartConfig
 public class DeleteRegisterServlet extends HttpServlet {
 
@@ -31,7 +31,7 @@ public class DeleteRegisterServlet extends HttpServlet {
                 return null;
             });
 
-            String url = "registers.jsp";
+            String url = "list-registers.jsp";
             response.sendRedirect(url);
         } catch (ClassNotFoundException cnfe) {
             cnfe.printStackTrace();
