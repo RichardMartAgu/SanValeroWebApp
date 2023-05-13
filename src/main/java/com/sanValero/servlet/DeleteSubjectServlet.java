@@ -1,6 +1,7 @@
 package com.sanValero.servlet;
 
 import com.sanValero.dao.Database;
+import com.sanValero.dao.RegisterDAO;
 import com.sanValero.dao.SubjectDAO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -21,10 +22,18 @@ public class DeleteSubjectServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         int idSubject = Integer.parseInt(request.getParameter("idSubject"));
+        System.out.println(idSubject);
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Database.connect();
+
+            Database.jdbi.withExtension(
+                    RegisterDAO.class,
+                    dao -> {
+                        dao.deleteRegisterBySubject(idSubject);
+                        return null;
+                    });
 
             Database.jdbi.withExtension(
                     SubjectDAO.class,
