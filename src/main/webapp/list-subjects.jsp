@@ -6,19 +6,36 @@
 
 <%@include file="includes/header.jsp"%>
 
-<div class="d-flex justify-content-center">
-  <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="index.jsp">Inicio</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Listar Subject</li>
-    </ol>
-  </nav>
-</div>
-<main>
-    <div class="d-flex justify-content-center align-items-center ">
+<style>
+    body {
+      background-image: linear-gradient(to bottom, #e1ecf8, #003399);
 
-    </div>
-    <div class="row bg-body-tertiary ">
+    }
+  </style>
+
+<main>
+ <script>
+         function confirmarBorrado(event) {
+           event.preventDefault();
+           swal({
+             title: "Are you sure?",
+             text: "Once deleted, it cannot be recovered!",
+             icon: "warning",
+             buttons: true,
+             dangerMode: true,
+           })
+           .then((willDelete) => {
+             if (willDelete) {
+             document.getElementById('formulario').submit();
+             } else {
+               swal("Deletion canceled.");
+             }
+           });
+         }
+ </script>
+
+    <div class="container d-flex align-items-center mt-5">
+    <div class="row bg-transparent "style="margin-top: 50px ">
      <%
         Class.forName("com.mysql.cj.jdbc.Driver");
         Database.connect();
@@ -29,16 +46,28 @@
    <div class="col-sm-4 text-center" >
      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
       <title>Placeholder</title>
-
+       <image href="../colegio_data/<%= subject.getImage() %>" width="100%" height="100%" />
       <rect width="100%" height="100%" fill="var(--bs-secondary-color)" opacity="0"></rect>
      </svg>
-     <h2 class="fw-normal"><%= subject.getSubjectName() %></h2>
-     <h2 class="fw-normal"><%= subject.getSubjectDescription() %></h2>
+     <h2 class="fw-semibold text-decoration-underline border border-info rounded p-3"><%= subject.getSubjectName() %></h2>
+     <br>
+
+     <h2 class="fst-italic">Year: <%= subject.getSubjectYear() %></h2>
+     <br>
+     <p><a class="btn btn-info" href="./details-subject.jsp?idSubject=<%= subject.getIdSubject() %>">Show more of subject</a></p>
+     <p><a class="btn btn-warning" href="./edit-subject.jsp?idSubject=<%= subject.getIdSubject() %>">Edit subject</a></p>
+   <form id="formulario" action="./delete-subject" >
+     <input type="hidden" name="idSubject" value="<%= subject.getIdSubject() %>">
+     <p><a class="btn btn-danger" onclick="confirmarBorrado(event)" href="./delete-subject.jsp?idSubject=<%= subject.getIdSubject() %>">Delete subject</a></p>
+    </form>
    </div>
   <%
       }
     %>
    </div>
+   </div>
  </main>
+
+
 
 <%@include file="includes/footer.jsp"%>
