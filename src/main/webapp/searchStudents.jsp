@@ -11,7 +11,7 @@
     <%@page contentType="text/html"%>
     <%@page pageEncoding="UTF-8"%>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    
+
 <head>
    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
@@ -28,20 +28,16 @@
   </div>
 </section>
 
+<main>
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container d-flex justify-content-center">
 
-<div class="album py-5 bg-body-tertiary">
-<div class="container " style="margin-top: 50px">
-
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <div class="row ">
    <%
-      Class.forName("com.mysql.cj.jdbc.Driver");
-      Database.connect();
-      List<Student> studentList = Database.jdbi.withExtension(StudentDAO.class, StudentDAO::getStudents);
-      for (Student student : studentList) {
+    for (Student student : (List<Student>)request.getAttribute("students")) {
    %>
 
-<div class="col">
-  <div class="card shadow-sm card card img">
+  <div class="card-custom">
     <img src="../colegio_data/<%= student.getImage() %>" class="bd-placeholder-img card-img-top"/>
     <div class="card-body">
       <p class="card-text"><%= student.getFirstName() %> <%= student.getLastName() %></p>
@@ -58,14 +54,15 @@
          <small class="text-muted"><%= student.getTelephone() %></small>
           </div>
          </div>
-       </div>
-     </div>
+
+
      <%
         }
      %>
    </div>
+  </div>
  </div>
-</div>
+</main>
 
 
 <script>

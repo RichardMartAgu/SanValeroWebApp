@@ -4,7 +4,7 @@
 <%@ page import="java.util.List" %>
 
 
-<%@include file="includes/header.jsp"%>
+<%@include file="includes/headerSubject.jsp"%>
 
 <style>
     body {

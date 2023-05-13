@@ -9,7 +9,7 @@
 <%@ page import="java.util.List" %>
 
 
-<%@include file="includes/header.jsp"%>
+<%@include file="includes/headerRegister.jsp"%>
 <main>
 <div class="album py-5 bg-body-tertiary">
   <div class="container" style="margin-top: 50px">
