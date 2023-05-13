@@ -26,7 +26,7 @@ public class DeleteStudentServlet extends HttpServlet {
             Database.connect();
 
             Database.jdbi.withExtension(RegisterDAO.class, dao -> {
-                dao.deleteStudentByRegister(id);
+                dao.deleteRegisterByStudent(id);
                 return null;
             });
 

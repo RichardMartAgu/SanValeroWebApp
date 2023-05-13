@@ -49,7 +49,7 @@
      <h2 class="fst-italic">Year: <%= subject.getSubjectYear() %></h2>
      <br>
      <p><a class="btn btn-info" href="./details-subject.jsp?idSubject=<%= subject.getIdSubject() %>">Show more of subject</a></p>
-     <p><a class="btn btn-warning" href="./edit-subject.jsp?idSubject=<%= subject.getIdSubject() %>">Edit subject</a></p>
+
        <p><a class="btn btn-danger"  href="./delete-subject?idSubject=<%= subject.getIdSubject() %>">Delete subject</a></p>
 
 

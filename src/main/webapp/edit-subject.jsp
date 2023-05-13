@@ -2,7 +2,7 @@
 <%@ page import="com.sanValero.domain.Subject" %>
 <%@ page import="com.sanValero.dao.SubjectDAO" %>
 
-<%@include file="includes/header.jsp"%>
+<%@include file="includes/headerSubject.jsp"%>
 
 <script type="text/javascript">
   $(document).ready(function() {
