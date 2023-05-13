@@ -2,9 +2,14 @@
 <%@ page import="com.sanValero.domain.Subject" %>
 <%@ page import="com.sanValero.dao.SubjectDAO" %>
 <%@ page import="java.util.List" %>
+<%@include file="includes/headerSubject.jsp"%>
 
+<style>
+    body {
+      background-image: linear-gradient(to bottom, #e1ecf8, #003399);
 
-<%@include file="includes/header.jsp"%>
+    }
+  </style>
 <main>
  <script>
          function confirmarBorrado(event) {
@@ -28,6 +33,21 @@
 <body class= "bg">
     <div class="container d-flex align-items-center mt-5">
     <div class="row bg-transparent "style="margin-top: 50px ">
+ <section class="py-5 text-center" style="margin-top: 44px;">
+   <div class="row py-lg-5">
+     <h1 class="fw-light">Student management</h1>
+     <br>
+     <div style="margin-bottom: 10px;">
+     </div>
+     <p>
+       <a href="add-subject.jsp" class="btn btn-outline-dark">Register new student</a>
+     </p>
+   </div>
+ </section>
+
+    <div class="container d-flex align-items-center">
+    <div class="row bg-transparent ">
+
      <%
         Class.forName("com.mysql.cj.jdbc.Driver");
         Database.connect();
@@ -48,9 +68,11 @@
      <br>
      <p><a class="btn btn-info" href="./details-subject.jsp?idSubject=<%= subject.getIdSubject() %>">Show more of subject</a></p>
      <p><a class="btn btn-warning" href="./edit-subject.jsp?idSubject=<%= subject.getIdSubject() %>">Edit subject</a></p>
+       <p><a class="btn btn-danger" onclick="confirmarBorrado(event)" href="./delete-subject?idSubject=<%= subject.getIdSubject() %">Delete subject</a></p>
+
    <form id="formulario" action="./delete-subject" >
-     <input type="hidden" name="idSubject" value="<%= subject.getIdSubject() %>">
-     <p><a class="btn btn-danger" onclick="confirmarBorrado(event)" href="./delete-subject.jsp?idSubject=<%= subject.getIdSubject() %>">Delete subject</a></p>
+        <input type="hidden" name="idSubject" id="idSubject">
+
     </form>
    </div>
   <%

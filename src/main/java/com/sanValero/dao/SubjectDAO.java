@@ -16,9 +16,9 @@ public interface SubjectDAO {
   List<Subject> getSubject();
 
   @SqlUpdate(
-      "INSERT INTO SUBJECTS (subject_name, subject_description, subject_year, duration, teacher, image) VALUES (?, ?, ?, ?, ?)")
-  void addProduct(
-      String name, String description, String year, String duration, String teacher, String image);
+      "INSERT INTO SUBJECTS (subject_name, subject_description, subject_year, duration, teacher, image) VALUES (?, ?, ?, ?, ?, ?)")
+  void addSubject(
+          String subjecName, String subjectDescription, String subjectYear, int duration, String teacher, String image);
 
   @SqlUpdate("DELETE FROM SUBJECTS WHERE id_subject = ?")
   void deleteSubject(int idSubject);
