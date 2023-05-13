@@ -73,7 +73,7 @@
                 <input type="text" class="form-control" id="telephone" name = "telephone" value='<%= telephone %>'>
             </div>
             <div class="col-md-6">
-                <label for="image" class="form-label">Imagen</label>
+                <label for="image" class="form-label">Image</label>
                 <input type="file" class="form-control" id="image" name="image">
             </div>
             <input type="hidden" name="action" value="<%= action %>"/>

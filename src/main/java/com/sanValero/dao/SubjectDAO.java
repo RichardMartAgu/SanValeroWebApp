@@ -35,7 +35,7 @@ public interface SubjectDAO {
   @SqlUpdate("UPDATE SUBJECTS SET image= ? WHERE ID_PRODUCT= ?")
   void modifyImageProduct(String image, int id_product);
 
-  @SqlQuery("SELECT * FROM SUBJECTS WHERE SUBJECT_NAME like ? or TEACHER like ? or DESCRIPTION like ?")
+  @SqlQuery("SELECT * FROM SUBJECTS WHERE SUBJECT_NAME like ? or TEACHER like ? or SUBJECT_DESCRIPTION like ?")
   @UseRowMapper(SubjectMapper.class)
   List<Subject> searchSubjectByNameByTeacherByDescription(String subjectName, String subjectTeacher, String description);
 }

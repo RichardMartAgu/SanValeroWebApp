@@ -22,7 +22,7 @@
           <div class="card-body d-flex flex-column align-items-center">
             <h4 class="card-title" ><%= student.getFirstName() %> <%= student.getLastName() %></h4>
             <p class="card-text" >DNI: <%= student.getDni() %></p>
-            <p class="card-text" >Adrees: <%= student.getAddress() %></p>
+            <p class="card-text" >Address: <%= student.getAddress() %></p>
             <p class="card-text" >Telephone: <%= student.getTelephone() %></p>
             <p class="card-text" >Id Student: <%= student.getId_student() %></p>
           </div>
