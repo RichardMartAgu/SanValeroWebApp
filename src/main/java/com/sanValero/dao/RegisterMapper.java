@@ -20,7 +20,7 @@ public class RegisterMapper implements RowMapper<Register> {
                 dao -> dao.searchStudent(rs.getInt("id_student")));
 
         Subject subject = Database.jdbi.withExtension(SubjectDAO.class,
-                dao -> dao.searchSubject(rs.getInt("id_subject")));
+                dao -> dao.searchSubjectById(rs.getInt("id_subject")));
 
     return new Register(rs.getInt("id_register")
             , student

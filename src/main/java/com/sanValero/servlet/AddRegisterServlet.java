@@ -42,7 +42,7 @@ public class AddRegisterServlet extends HttpServlet {
 
 
             Subject subject = Database.jdbi.withExtension(SubjectDAO.class,
-                    dao -> dao.searchSubject(id_subject));
+                    dao -> dao.searchSubjectById(id_subject));
 
 
 
