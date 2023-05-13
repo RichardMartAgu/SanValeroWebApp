@@ -26,9 +26,21 @@
     .card img{
       height: 250px;
     }
+    .pt-25{
+      padding-top:25px;
+      padding-bottom: 25px;
+    }
+    .p-25{
+      padding: 152px;
+    }
+    .card-custom{
+       width: 459px;
+       margin: 0 auto;
+    }
+    .pd-25{
+       padding-top: 30px;
+    }
     </style>
-
-
 
   </head>
 <body>
