@@ -31,20 +31,12 @@ public class EditSubjectServlet extends HttpServlet {
         String subjectYear = request.getParameter("subjectYear");
         int duration = Integer.parseInt(request.getParameter("duration"));
         String teacher = request.getParameter("teacher");
-        String imagePath = request.getServletContext().getInitParameter("image-path");
+
 
 
             try {
 
-                Part imagePart = request.getPart("image");
-                String fileName;
-                if (imagePart.getSize() == 0) {
-                    fileName = "no_image.jpg";
-                } else {
-                    fileName = UUID.randomUUID() + ".jpg";
-                    InputStream fileStream = imagePart.getInputStream();
-                    Files.copy(fileStream, Path.of(imagePath + File.separator + fileName));
-                }
+
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 Database.connect();
                 Database.jdbi.withExtension(

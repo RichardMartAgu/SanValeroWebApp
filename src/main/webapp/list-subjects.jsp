@@ -11,36 +11,18 @@
     }
   </style>
 <main>
- <script>
-         function confirmarBorrado(event) {
-           event.preventDefault();
-           swal({
-             title: "Are you sure?",
-             text: "Once deleted, it cannot be recovered!",
-             icon: "warning",
-             buttons: true,
-             dangerMode: true,
-           })
-           .then((willDelete) => {
-             if (willDelete) {
-             document.getElementById('formulario').submit();
-             } else {
-               swal("Deletion canceled.");
-             }
-           });
-         }
- </script>
+
 <body class= "bg">
     <div class="container d-flex align-items-center mt-5">
     <div class="row bg-transparent "style="margin-top: 50px ">
  <section class="py-5 text-center" style="margin-top: 44px;">
    <div class="row py-lg-5">
-     <h1 class="fw-light">Student management</h1>
+     <h1 class="fw-light">Subject management</h1>
      <br>
      <div style="margin-bottom: 10px;">
      </div>
      <p>
-       <a href="add-subject.jsp" class="btn btn-outline-dark">Register new student</a>
+       <a href="add-subject.jsp" class="btn btn-outline-dark">Register new subject</a>
      </p>
    </div>
  </section>
@@ -68,12 +50,9 @@
      <br>
      <p><a class="btn btn-info" href="./details-subject.jsp?idSubject=<%= subject.getIdSubject() %>">Show more of subject</a></p>
      <p><a class="btn btn-warning" href="./edit-subject.jsp?idSubject=<%= subject.getIdSubject() %>">Edit subject</a></p>
-       <p><a class="btn btn-danger" onclick="confirmarBorrado(event)" href="./delete-subject?idSubject=<%= subject.getIdSubject() %">Delete subject</a></p>
+       <p><a class="btn btn-danger"  href="./delete-subject?idSubject=<%= subject.getIdSubject() %>">Delete subject</a></p>
 
-   <form id="formulario" action="./delete-subject" >
-        <input type="hidden" name="idSubject" id="idSubject">
 
-    </form>
    </div>
   <%
       }

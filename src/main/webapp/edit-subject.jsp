@@ -9,23 +9,29 @@
       $("form").on("submit", function(event) {
           event.preventDefault();
           var form = $(this)[0];
-          var formData = new FormData(form);
-          $.ajax({
-              url: "edit-subject",
-              type: "POST",
-              data: formData,
-              processData: false,
-              contentType: false,
-              success: function(data) {
-                  $("#result").html(data);
-                  setTimeout(function(){
-                    window.location.href='list-subject.jsp';
-                  }, 3000);
-              },
-          });
+        var formData = $("form").serialize();
+        $.ajax({
+            url: "edit-subject",
+            type: "POST",
+            data: formData,
+            success: function(data) {
+                $("#result").html(data);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $("#error-message").html("Fallo al Editar! " + errorThrown);
+            }
+        });
       });
   });
 </script>
+
+     <script type="text/javascript">
+         function refreshPage() {
+             setTimeout(function() {
+                 location.reload();
+             }, 2000);
+         }
+    </script>
 
 
 
@@ -75,10 +81,7 @@ body {
               <label for="name" class="form-label">Teacher</label>
               <input type="text" class="form-control" id="teacher" name="teacher" value= "<%= subject.getTeacher() %>"required>
         </div>
-        <div class="col-md-6">
-                          <label for="image" class="form-label">Añadir imagen (opcional)</label>
-                          <input type="file" class="form-control" id="image" name="image">
-        </div>
+
       <div>
           <input type="hidden" class="form-control"  name="idSubject" value="<%=subject.getIdSubject()%>" >
      </div>

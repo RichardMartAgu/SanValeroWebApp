@@ -91,4 +91,3 @@ body {
     </script>
 <main/>
 
-<%@include file="includes/footer.jsp"%>
