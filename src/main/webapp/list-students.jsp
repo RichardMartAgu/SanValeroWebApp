@@ -6,6 +6,7 @@
 <%@include file="includes/headerStudent.jsp"%>
  <main>
 
+
 <!DOCTYPE html>
 <html lang="es">
     <%@page contentType="text/html"%>
@@ -16,8 +17,8 @@
    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
-<section class="py-5 text-center" style="margin-top: 44px;">
-  <div class="row py-lg-5">
+<section class="py-5 text-center bg" style="margin-top: 44px;">
+  <div class="container" style="margin-top: 50px;">
     <h1 class="fw-light">Student management</h1>
     <br>
     <div style="margin-bottom: 10px;">
@@ -72,6 +73,7 @@
 function confirmDelete(name, studentId) {
    swal({
       title: "¿Are you sure you want to eliminate  " + name + "?",
+      text: "All records with that student id will be deleted",
       icon: "warning",
       buttons: ["Cancel", "Delete"],
       dangerMode: true,
@@ -84,3 +86,5 @@ function confirmDelete(name, studentId) {
    return false;
 }
 </script>
+
+<%@include file="includes/footer.jsp"%>

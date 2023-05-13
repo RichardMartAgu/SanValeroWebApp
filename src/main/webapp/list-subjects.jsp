@@ -2,8 +2,6 @@
 <%@ page import="com.sanValero.domain.Subject" %>
 <%@ page import="com.sanValero.dao.SubjectDAO" %>
 <%@ page import="java.util.List" %>
-
-
 <%@include file="includes/headerSubject.jsp"%>
 
 <style>
@@ -12,7 +10,6 @@
 
     }
   </style>
-
 <main>
  <script>
          function confirmarBorrado(event) {
@@ -33,6 +30,9 @@
            });
          }
  </script>
+<body class= "bg">
+    <div class="container d-flex align-items-center mt-5">
+    <div class="row bg-transparent "style="margin-top: 50px ">
  <section class="py-5 text-center" style="margin-top: 44px;">
    <div class="row py-lg-5">
      <h1 class="fw-light">Student management</h1>
@@ -47,6 +47,7 @@
 
     <div class="container d-flex align-items-center">
     <div class="row bg-transparent ">
+
      <%
         Class.forName("com.mysql.cj.jdbc.Driver");
         Database.connect();
@@ -80,7 +81,7 @@
    </div>
    </div>
  </main>
+</body>
 
-
-
+</main>
 <%@include file="includes/footer.jsp"%>

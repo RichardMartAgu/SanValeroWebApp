@@ -20,7 +20,6 @@ public interface RegisterDAO {
     @SqlUpdate("DELETE FROM registers WHERE id_register = ?")
     void deleteRegister(int id_register);
 
-
     @SqlQuery("SELECT * FROM registers WHERE id_student = ?")
     @UseRowMapper(RegisterMapper.class)
     List<Register> searchStudentRegister(int id_student);
@@ -34,5 +33,8 @@ public interface RegisterDAO {
 
     @SqlUpdate("DELETE FROM registers WHERE id_subject = ?")
     void deleteRegisterBySubject(int id_subject);
+
+    @SqlUpdate("DELETE FROM students WHERE id_student = ?")
+    void deleteStudentByRegister(int id_student);
 
 }
