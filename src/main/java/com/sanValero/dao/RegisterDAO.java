@@ -14,12 +14,11 @@ public interface RegisterDAO {
     @UseRowMapper(RegisterMapper.class)
     List<Register> getRegisters();
 
-    @SqlUpdate("INSERT INTO registers (id_student, id_subject, buy_date) VALUES (?, ?, ?)")
+    @SqlUpdate("INSERT INTO registers (id_student, id_subject, register_date) VALUES (?, ?, ?)")
     void addRegister(int id_student, int id_subject, LocalDate date);
 
     @SqlUpdate("DELETE FROM registers WHERE id_register = ?")
     void deleteRegister(int id_register);
-
 
     @SqlQuery("SELECT * FROM registers WHERE id_student = ?")
     @UseRowMapper(RegisterMapper.class)
@@ -30,9 +29,12 @@ public interface RegisterDAO {
 
     @SqlQuery("SELECT * FROM registers WHERE id_register = ?")
     @UseRowMapper(RegisterMapper.class)
-    Register searchRegister(int id_register);
+    Register searchRegisterById(int id_register);
 
     @SqlUpdate("DELETE FROM registers WHERE id_subject = ?")
     void deleteRegisterBySubject(int id_subject);
+
+    @SqlUpdate("DELETE FROM students WHERE id_student = ?")
+    void deleteStudentByRegister(int id_student);
 
 }

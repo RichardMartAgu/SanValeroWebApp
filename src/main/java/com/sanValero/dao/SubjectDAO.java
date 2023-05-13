@@ -16,28 +16,26 @@ public interface SubjectDAO {
   List<Subject> getSubject();
 
   @SqlUpdate(
-      "INSERT INTO SUBJECTS (subject_name, subject_description, subject_year, duration, teacher, image) VALUES (?, ?, ?, ?, ?)")
-  void addProduct(
-      String name, String description, String year, String duration, String teacher, String image);
+      "INSERT INTO SUBJECTS (subject_name, subject_description, subject_year, duration, teacher, image) VALUES (?, ?, ?, ?, ?, ?)")
+  void addSubject(
+          String subjecName, String subjectDescription, String subjectYear, int duration, String teacher, String image);
 
   @SqlUpdate("DELETE FROM SUBJECTS WHERE id_subject = ?")
-  void deleteProduct(int id_product);
+  void deleteSubject(int idSubject);
 
   @SqlQuery("SELECT * FROM SUBJECTS WHERE id_subject = ?")
   @UseRowMapper(SubjectMapper.class)
-  Subject searchSubject(int id_subject);
+  Subject searchSubjectById(int id_subject);
 
   @SqlUpdate(
-      "UPDATE SUBJECTS SET name_p = ?, description_p = ?, format_p = ?,"
-          + "price = ? WHERE ID_PRODUCT= ?")
-  void modifyProduct(
-      String name_p, String description_p, int format_p, float price, int id_product);
+      "UPDATE SUBJECTS SET SUBJECT_NAME = ?, SUBJECT_DESCRIPTION = ?, SUBJECT_YEAR = ?, DURATION = ?,TEACHER = ? WHERE ID_SUBJECT= ?")
+  void editSubject(
+       String subjecName, String subjectDescription, String subjectYear,int duration, String teacher,int idSubject);
 
   @SqlUpdate("UPDATE SUBJECTS SET image= ? WHERE ID_PRODUCT= ?")
   void modifyImageProduct(String image, int id_product);
 
-  @SqlQuery("SELECT * FROM SUBJECTS WHERE SUBJECT_NAME like ? or TEACHER like ?")
+  @SqlQuery("SELECT * FROM SUBJECTS WHERE SUBJECT_NAME like ? or TEACHER like ? or SUBJECT_DESCRIPTION like ?")
   @UseRowMapper(SubjectMapper.class)
-  List<Subject> searchSubjectByNameOrTeacher(
-      @Bind("name_p") String name_p, @Bind("description_p") String description_p);
+  List<Subject> searchSubjectByNameByTeacherByDescription(String subjectName, String subjectTeacher, String description);
 }
