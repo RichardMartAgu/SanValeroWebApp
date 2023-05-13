@@ -86,7 +86,9 @@
           <configuration>
 
 
+
             <url>http://localhost:8088/manager/text</url>
+
 
 
             <server>tomcat18</server>

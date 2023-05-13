@@ -11,24 +11,22 @@
           var form = $(this)[0];
           var formData = new FormData(form);
           $.ajax({
-              url: "edit-subject",
+              url: "add-subject",
               type: "POST",
               data: formData,
               processData: false,
               contentType: false,
               success: function(data) {
                   $("#result").html(data);
-                  setTimeout(function(){
-                    window.location.href='list-subject.jsp';
-                  }, 3000);
               },
+              error: function(jqXHR, textStatus, errorThrown) {
+                  $("#error-message").html("Fallo al registrar! " + errorThrown);
+              }
           });
       });
   });
+
 </script>
-
-
-
 
 <style>
 body {
@@ -36,21 +34,14 @@ body {
 }
 </style>
 <main>
-    <%
-
-    Class.forName("com.mysql.cj.jdbc.Driver");
-    Database.connect();
-    int idSubject = Integer.parseInt(request.getParameter("idSubject"));
-    Subject subject = Database.jdbi.withExtension(SubjectDAO.class, dao -> dao.searchSubjectById(idSubject));
-   %>
 
 <div class="container px-5">
-    <h3 class="display-4 fw-normal text-center">Edit Subject</h3>
+    <h3 class="display-4 fw-normal text-center">Add Subject</h3>
     <br/> <br/>
-    <form class="row g-3 needs"enctype="multipart/form-data">
+    <form class="row g-3 needs">
      <div class="col-md-6">
             <label for="nombre" class="form-label">Subject Name</label>
-            <input type="text" class="form-control" id="subjectName" name="subjectName"value="<%= subject.getSubjectName() %>" >
+            <input type="text" class="form-control" id="subjectName" name="subjectName" >
             <div class="invalid-feedback">
                   Por favor ingrese el nombre del profesor.
             </div>
@@ -58,33 +49,31 @@ body {
 
       <div class="col-md-6">
         <label for="inputEmail" class="form-label">Subject Description</label>
-        <input type="name" class="form-control" id="subjectDescription"name="subjectDescription" value="<%= subject.getSubjectDescription() %>"required>
+        <input type="name" class="form-control" id="subjectDescription"name="subjectDescription" required>
         </div>
       <div class="col-md-6">
         <label for="inputPassword4" class="form-label">Subject Year</label>
-        <input type="year" class="form-control" id="subjectYear"name="subjectYear"value= "<%= subject.getSubjectYear() %>">
+        <input type="year" class="form-control" id="subjectYear"name="subjectYear">
       </div>
       <div class="col-12">
         <label for="inputAddress" class="form-label">Duration</label>
-        <input type="text" class="form-control" id="duration" name="duration" value= "<%= subject.getDuration() %>">
+        <input type="text" class="form-control" id="duration" name="duration" >
         <div class="invalid-feedback">
               Por favor ingrese la dirección.
          </div>
       </div>
       <div class="col-12">
               <label for="name" class="form-label">Teacher</label>
-              <input type="text" class="form-control" id="teacher" name="teacher" value= "<%= subject.getTeacher() %>"required>
+              <input type="text" class="form-control" id="teacher" name="teacher" required>
         </div>
-        <div class="col-md-6">
-                          <label for="image" class="form-label">Añadir imagen (opcional)</label>
-                          <input type="file" class="form-control" id="image" name="image">
-        </div>
-      <div>
-          <input type="hidden" class="form-control"  name="idSubject" value="<%=subject.getIdSubject()%>" >
+
+     <div class="col-md-6">
+           <label for="image" class="form-label">Image (opcional)</label>
+           <input type="file" class="form-control" id="image" name="image">
      </div>
 
    <div class="col-12 text-center">
-        <button type="submit" class="btn btn-outline-warning btn-lg" onclick="refreshPage()">Edit</button>
+        <button type="submit" class="btn btn-outline-warning btn-lg" onclick="refreshPage()">Add</button>
    </div>
   </div>
 </form>
@@ -92,6 +81,14 @@ body {
  <div id="result"></div>
  <div class= "text-center bg-danger-subtle text-danger-emphasis fs-4" id="error-message"></div>
 </div>
+ </script>
+  <script type="text/javascript">
+        function refreshPage() {
+            setTimeout(function() {
+                location.reload();
+            }, 2000);
+        }
+    </script>
 <main/>
 
 <%@include file="includes/footer.jsp"%>
