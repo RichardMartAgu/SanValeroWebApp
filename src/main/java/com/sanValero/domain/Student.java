@@ -20,7 +20,6 @@ public class Student {
     private String dni;
     @NonNull
     private String address;
-
     @NonNull
     private String telephone;
     @NonNull
